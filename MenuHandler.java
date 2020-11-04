@@ -7,8 +7,6 @@ public class MenuHandler {
         while (menu.gameEnd==false) {
             System.out.println("\n");
             menu = menu.init();
-            //TODO
-            //interrompere il ciclo utilizzando una variabile
         }
     }
 }
