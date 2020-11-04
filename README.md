@@ -1,3 +1,4 @@
 # Instructions
 ## Compiling
-Open a terminal window and execute "sh make.sh"
+Open a terminal windows and executo javac *.java
+then execute with "java Main"
