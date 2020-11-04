@@ -7,6 +7,8 @@ public class MenuHandler {
         while (true) {
             System.out.println("\n");
             menu = menu.init();
+            //TODO
+            //interrompere il ciclo utilizzando una variabile
         }
     }
 }
