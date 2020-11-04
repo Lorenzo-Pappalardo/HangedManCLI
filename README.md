@@ -1,4 +1,4 @@
 # Instructions
 ## Compiling
-Open a terminal windows and executo javac *.java
-then execute with "java Main"
+Open a terminal window and execute "javac *.java" to compile.
+Then execute the build with "java Main".
