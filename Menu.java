@@ -5,8 +5,11 @@ public abstract class Menu {
 
     abstract Menu init();
 
+    boolean gameEnd = false;
+
     void exit() {
         System.out.println("Grazie per aver giocato.");
+        gameEnd = true;
         System.exit(0);
     }
 }
