@@ -13,8 +13,7 @@ public class Word {
 
     private static BufferedReader loaddb() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("worddb.txt"));
-            return br;
+            return new BufferedReader(new FileReader("worddb.txt"));
         } catch (FileNotFoundException fnfe) {
             System.out.println("File non trovato.");
         }
@@ -26,7 +25,7 @@ public class Word {
         try {
             while (br.ready())
                 wordlist.add(br.readLine());
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("Errore caricando il db.");
         }
     }
@@ -42,5 +41,4 @@ public class Word {
         System.out.println(Word.getWord());
         System.out.println("...random word generation successful");
     }
-
 }
