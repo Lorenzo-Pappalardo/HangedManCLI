@@ -1,12 +1,6 @@
-public class GameMenu implements Menu {
+public class GameMenu extends Menu {
     public void printHeader() {
         System.out.println("Nuova Partita");
-    }
-
-    public Menu init(){
-        Game gm = new Game(Word.getWord());
-        gm.play();
-        return new MainMenu();
     }
 
     public Menu changeMenu() {
@@ -16,12 +10,16 @@ public class GameMenu implements Menu {
             case 1:
                 return new GameMenu();
             case 2:
-                Inputchecker.exitGame();
-                break;
+                exit();
             default:
                 System.out.println("Scelta non valida");
         }
         return this;
     }
-    
+
+    public Menu init() {
+        Game gm = new Game(Word.getWord());
+        gm.play();
+        return new MainMenu();
+    }
 }

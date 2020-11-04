@@ -1,7 +1,15 @@
-public interface Menu {
-    public void printHeader();
+public abstract class Menu {
+    abstract void printHeader();
 
-    Menu changeMenu();
+    abstract Menu changeMenu();
 
-    public Menu init();
+    abstract Menu init();
+
+    boolean gameEnd = false;
+
+    void exit() {
+        System.out.println("Grazie per aver giocato.");
+        gameEnd = true;
+        System.exit(0);
+    }
 }
