@@ -1,7 +1,6 @@
 import java.io.*;
 
 public class Inputchecker {
-
     public static char getLetter() {
         char res = 'a';
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,10 +21,5 @@ public class Inputchecker {
             e.printStackTrace();
         }
         return res;
-    }    
-
-    public static void exitGame(){
-        System.out.println("Grazie per aver giocato.");
-        System.exit(0);
     }
 }

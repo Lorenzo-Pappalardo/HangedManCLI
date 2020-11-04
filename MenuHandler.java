@@ -1,8 +1,12 @@
 public class MenuHandler {
-    public static void init(){
-        Menu menu=new MainMenu();
-        while(true){
-            menu=menu.init();
+    private MenuHandler() {
+    }
+
+    public static void init() {
+        Menu menu = new MainMenu();
+        while (true) {
+            System.out.println("\n");
+            menu = menu.init();
         }
     }
 }
