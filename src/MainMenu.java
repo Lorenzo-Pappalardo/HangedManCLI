@@ -1,3 +1,5 @@
+package src;
+
 public class MainMenu extends Menu {
     public void printHeader() {
         System.out.println("Benvenuto giocatore!\n");

@@ -1,3 +1,5 @@
+package src;
+
 public class HiddenWord {
     public String word;
     public int[] triggers;

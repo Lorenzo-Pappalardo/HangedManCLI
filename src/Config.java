@@ -1,3 +1,5 @@
+package src;
+
 public abstract class Config {
     private static final String WORDLIST = "../wordlist.txt";
 
