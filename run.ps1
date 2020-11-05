@@ -1,3 +1,3 @@
-cd ./build
+cd build
 java Main
 cd ..
