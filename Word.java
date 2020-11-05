@@ -13,7 +13,7 @@ public class Word {
 
     private static BufferedReader loaddb() {
         try {
-            return new BufferedReader(new FileReader("./worddb.txt"));
+            return new BufferedReader(new FileReader(Config.getWordlist()));
         } catch (FileNotFoundException fnfe) {
             System.out.println("File non trovato.");
         }

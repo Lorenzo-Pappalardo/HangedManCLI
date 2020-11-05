@@ -4,7 +4,7 @@ public class MenuHandler {
 
     public static void init() {
         Menu menu = new MainMenu();
-        while (menu.gameEnd==false) {
+        while (!menu.gameEnd) {
             System.out.println("\n");
             menu = menu.init();
         }
