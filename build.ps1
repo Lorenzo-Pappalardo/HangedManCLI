@@ -1,1 +1,1 @@
-javac *.java -d ./build
+javac src/*.java -d ./build
