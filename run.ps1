@@ -1,3 +1,3 @@
-cd build
+Set-Location build
 java Main
-cd ..
+Set-Location ..
