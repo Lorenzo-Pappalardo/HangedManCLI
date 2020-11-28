@@ -1,1 +1,3 @@
-javac src/*.java -d ./build
+cd .\src
+javac .\game_logic\Main.java -d ..\build
+cd ..
