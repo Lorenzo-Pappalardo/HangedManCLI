@@ -1,3 +1,3 @@
-cd .\src
+Set-Location .\src
 javac .\game_logic\Main.java -d ..\build
-cd ..
+Set-Location ..
