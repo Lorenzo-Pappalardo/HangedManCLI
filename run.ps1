@@ -1,3 +1,3 @@
 Set-Location build
-java Main
+java game_logic.Main
 Set-Location ..
