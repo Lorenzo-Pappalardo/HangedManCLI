@@ -1,3 +1,5 @@
+package game_logic;
+
 public class HiddenWord {
     public String word;
     public int[] triggers;

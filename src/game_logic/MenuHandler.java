@@ -1,3 +1,5 @@
+package game_logic;
+
 public class MenuHandler {
     private MenuHandler() {
     }

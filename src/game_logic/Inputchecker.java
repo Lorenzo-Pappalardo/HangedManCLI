@@ -1,3 +1,5 @@
+package game_logic;
+
 import java.io.*;
 
 public class Inputchecker {

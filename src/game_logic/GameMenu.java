@@ -1,3 +1,5 @@
+package game_logic;
+
 public class GameMenu extends Menu {
     public void printHeader() {
         System.out.println("Nuova Partita");

@@ -1,3 +1,5 @@
+package game_logic;
+
 public abstract class Menu {
     abstract void printHeader();
 
