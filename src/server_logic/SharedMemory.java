@@ -17,6 +17,14 @@ public class SharedMemory {
     return instance;
   }
 
+  public List<Player> getPlayers() {
+    return players;
+  }
+
+  public int getPlayersCount() {
+    return players.size();
+  }
+
   public void addPlayer(Player newPlayer) {
     players.add(newPlayer);
   }

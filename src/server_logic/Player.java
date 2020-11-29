@@ -10,27 +10,51 @@ import java.io.PrintWriter;
 
 public class Player {
   private String name;
-  BufferedReader socketInput;
-  PrintWriter socketOutput;
+  private BufferedReader socketInput;
+  private PrintWriter socketOutput;
+  private boolean ready;
 
   public Player(InputStream socketInput, OutputStream socketOutput) {
-    this.name = "";
     this.socketInput = new BufferedReader(new InputStreamReader(socketInput));
     this.socketOutput = new PrintWriter(new OutputStreamWriter(socketOutput), true);
+    name = null;
+    ready = false;
   }
 
-  public void getName() {
-    socketOutput.println("Enter your name:");
+  public String getName() {
+    if (name == null) {
+      socketOutput.println("Enter your name:");
 
+      try {
+        name = socketInput.readLine();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    return name;
+  }
+
+  public void welcome() {
+    socketOutput.println("Hi " + name + "!\n");
+    socketOutput.println("You've joined the lobby");
+    socketOutput
+        .println("Currently there are other " + SharedMemory.getInstance().getPlayersCount() + " players in lobby");
+    socketOutput.println("The game will start once all players in lobby will be ready\n");
+  }
+
+  public void readyUp() {
+    socketOutput.println("Press \'R\' to ready up");
     try {
-      name = socketInput.readLine();
+      if (socketInput.readLine().equalsIgnoreCase("r"))
+        ready = true;
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
-  public void sendGreetings() {
-    socketOutput.println("Hi " + name + " xD");
+  public boolean isReady() {
+    return ready;
   }
 
   @Override

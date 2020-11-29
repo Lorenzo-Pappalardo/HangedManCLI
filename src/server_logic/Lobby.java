@@ -1,27 +1,20 @@
 package server_logic;
 
-import java.net.ServerSocket;
-import java.net.Socket;
-
 public class Lobby implements Runnable {
-  private final SharedMemory sharedMemory = SharedMemory.getInstance();
+  private SharedMemory sharedMemory = SharedMemory.getInstance();
+
+  private boolean begin = false;
 
   @Override
   public void run() {
-    System.out.println("Lobby started");
-
-    while (!sharedMemory.gameStarted) {
-      try (ServerSocket socket = new ServerSocket(8080); Socket newPlayerSocket = socket.accept();) {
-        System.out.println(
-            "Connection from " + newPlayerSocket.getInetAddress() + ':' + newPlayerSocket.getPort() + " accepted");
-
-        Player newPlayer = new Player(newPlayerSocket.getInputStream(), newPlayerSocket.getOutputStream());
-        newPlayer.getName();
-        sharedMemory.addPlayer(newPlayer);
-        newPlayer.sendGreetings();
-      } catch (Exception e) {
-        e.printStackTrace();
+    while (!(sharedMemory.gameStarted)) {
+      for (Player player : sharedMemory.getPlayers()) {
+        if (!(player.isReady()))
+          break;
       }
+
+      if (begin)
+        sharedMemory.gameStarted = true;
     }
   }
 }
