@@ -30,7 +30,7 @@ public class Player {
   }
 
   public void sendGreetings() {
-    socketOutput.println("You joined the lobby");
+    socketOutput.println("Hi " + name + " xD");
   }
 
   @Override

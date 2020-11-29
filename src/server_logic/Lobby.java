@@ -3,7 +3,7 @@ package server_logic;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Lobby extends State implements Runnable {
+public class Lobby implements Runnable {
   private final SharedMemory sharedMemory = SharedMemory.getInstance();
 
   @Override
